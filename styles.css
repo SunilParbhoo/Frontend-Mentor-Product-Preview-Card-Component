@@ -5,6 +5,7 @@
 
   --dark-cyan: hsl(158, 36%, 37%);
   --cream: hsl(30, 38%, 92%);
+  --active-dark-green: hsl(151, 27%, 19%);
 
   /* ### Neutral */
 
@@ -16,7 +17,6 @@
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
 }
 
 body {
@@ -27,13 +27,14 @@ body {
   background-color: var(--cream);
   font-family: "Montserrat", sans-serif;
   height: 100vh;
+  text-wrap: balance;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 344px;
   overflow: hidden;
 }
@@ -51,7 +52,6 @@ picture {
 .card-desc {
   padding: 26px 24px 24px;
   background-color: var(--white);
-  /* text-align: center; */
 }
 
 span:first-of-type {
@@ -72,7 +72,7 @@ span.sale-price {
 h1 {
   color: var(--very-dark-blue);
   margin-top: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 p {
@@ -83,8 +83,8 @@ p {
 }
 
 .prices {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 span.sale-price {
@@ -96,11 +96,12 @@ span.sale-price {
   color: var(--dark-grayish-blue);
   font-weight: 500;
   text-decoration: line-through;
+  line-height: calc(50%);
 }
 
 button {
   width: 100%;
-  /* margin: 24px 0; */
+  margin: 24px 0;
   padding: 16px 90px;
   color: var(--white);
   background-color: var(--dark-cyan);
@@ -115,13 +116,45 @@ button img {
   margin-right: 10px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  background-color: var(--active-dark-green);
+}
+
 .attribution {
   position: fixed;
-  bottom: 20px;
+  bottom: 0;
+  padding: 5px;
   font-size: 11px;
-  /* text-align: center; */
   align-items: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 601px) {
+  .card {
+    flex-direction: row;
+    justify-content: center;
+    width: 600px;
+    height: 450px;
+  }
+
+  .card-image,
+  .card-desc {
+    box-sizing: border-box;
+    flex-basis: 50%;
+  }
+
+  .card-image {
+    height: 100%;
+    flex-basis: 50%;
+  }
+
+  .card-image img {
+    height: 100%;
+  }
 }
