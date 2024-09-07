@@ -120,9 +120,6 @@ button img {
 
 button:hover {
   cursor: pointer;
-}
-
-button:active {
   background-color: var(--active-dark-green);
 }
 
